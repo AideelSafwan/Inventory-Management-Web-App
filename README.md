@@ -1,4 +1,4 @@
-Item Maintenance App:
+Inventory Management Web Application:
 A simple CRUD project created using Python Django.
 
 Database:
