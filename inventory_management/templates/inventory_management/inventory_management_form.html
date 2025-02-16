@@ -1,0 +1,29 @@
+{% extends "inventory_management/base.html" %}
+{% load crispy_forms_tags %}
+
+{% block content %}
+<form action="" method="post" autocomplete="off">
+  {% csrf_token %}
+  <div class="row">
+    <div class="col-md-6">{{form.code|as_crispy_field}}</div>
+    <div class="col-md-6">{{form.price|as_crispy_field}}</div>
+  </div>
+  {{form.category|as_crispy_field}}
+  <div class="height-10">{{form.description|as_crispy_field}}</div>
+  <div class="row">
+    <div class="col-md-8">
+      <button type="submit" class="btn btn-success btn-block btn-lg">
+        <i class="fas fa-save"></i> Submit
+      </button>
+    </div>
+    <div class="col-md-4">
+      <a
+        href="{% url 'inventory_management_retrieve' %}"
+        class="btn btn-secondary btn-block btn-lg"
+      >
+        <i class="fas fa-stream"></i> Back to list
+      </a>
+    </div>
+  </div>
+</form>
+{% endblock content %}
